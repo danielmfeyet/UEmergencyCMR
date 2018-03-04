@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"    
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Detail Emplacement</title>
+           <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+               <meta charset="utf-8"></meta>
+        <link rel="stylesheet" type="text/css" href="style.css"></link>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" href="bootstrap-3.3.6/dist/css/bootstrap.min.css"  />
+
+    
+        <link rel="stylesheet" href="bootstrap-3.3.6/dist/font-awesome-4.6.3/css/font-awesome.min.css"  />
+        
+        
+    </h:head>
+    <h:body style="background:#CEE3F6;"   >
+        
+     
+       <!-- main container -->
+	<div class="main-container">
+		<!--  left box container-->
+	
+		<!-- end of left box container -->
+		
+		<!-- contain the principal box -->
+		<div class="main-side">
+                   
+			
+			<!-- overview of our messages -->
+			<section class="show-msgs">
+                            <center> <h2 class="modal-title">Détail Localisation de l'alerte Venant de : <b> #{manager.ev.authorId.username} </b> </h2> </center>
+                            <br />
+                            <h:form>
+                                
+                                <center>
+                                    <div class="col-md-12">
+                                            <div class="input-group">
+                                                <label for="userEmail" class="sr-only">Service</label>
+                                                <span class="input-group-addon" id="profile-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                                                <h:inputText  id="userEmail"  class="form-control"   p:aria-describedby="profile-addon1" value="#{manager.ev.title}"/>
+                                            </div><br />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <label for="userFirstname" class="sr-only">Description</label>
+                                                <span class="input-group-addon" id="profile-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                                <h:inputTextarea  id="userFirstname" class="form-control"   p:aria-describedby="profile-addon2" value="#{manager.ev.description}"/>
+                                            </div><br />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <br />
+                                        </div>
+
+                                                <h:inputHidden  id="large"  value="#{manager.ev.locationId.latitude}"/>
+                                                <h:inputHidden  id="longi"  value="#{manager.ev.locationId.longitude}"/>
+             
+
+                                                <p:gmap center="#{manager.ev.locationId.latitude},#{manager.ev.locationId.longitude}" zoom="16" type="HYBRID" style="width:800px;height:400px"  />
+	
+
+		<script 
+    		src=    "https://maps.googleapis.com/maps/api/js?key= AIzaSyDmv8wieNNykKVjJR-2fyaFh2eDzB1xbLs &amp;callback=initMap">
+    	</script>
+
+             
+              <br />
+             
+                                        <div class="col-md-12">
+                                            <div class="col-xs-8 col-xs-push-2 col-md-8 col-md-push-2 ">
+                                                <h:commandLink class="btn btn-md btn-primary btn-block" action="acceuil.xhtml" > <i class="glyphicon glyphicon-repeat" aria-hidden="true"> </i> <strong>Retourner</strong></h:commandLink>
+                                                                   
+                                            </div>
+                                        </div>  
+                                </center>
+                    </h:form>	
+                            
+                            
+			</section>
+
+			<!-- our footer -->
+			
+		</div>
+	</div>
+    </h:body>
+</html>
+
